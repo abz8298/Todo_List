@@ -3,6 +3,7 @@ function Todo({todoData, isFinished, changeFinished, onDelete, onEdit}){
     const [finished, setFinished] = useState(isFinished);
     const [isEditting, setIsEditting] = useState(false);
     const [editText, setEditText] = useState(todoData);
+    
     return (
         <div>
             <input type="checkbox" checked={finished} onChange={(e)=> {setFinished(e.target.checked);
