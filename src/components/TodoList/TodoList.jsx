@@ -3,19 +3,19 @@ import {useSelector } from "react-redux";
 
 function TodoList({editTodo, deleteTodo, todoFinished}){
 
-    const list = useSelector((state)=> state.todo);
+    const list = useSelector((state)=> state.todo.todoList);
 
     function onFinished(todo, isFinished){
-        todoFinished(todo, isFinished);
+        todoFinished({todo, isFinished});
     }
 
     function onDelete(todo){
-       deleteTodo(todo);
+       deleteTodo({todo});
     }
 
 
     function onEdit(todo, todoText){
-        editTodo(todo, todoText);
+        editTodo({todo, todoText});
     }
 
 
